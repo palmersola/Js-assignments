@@ -1,14 +1,19 @@
-let tasks = [];
+const taskManager = (function() {
+  let tasks = [];
+  function addTasks(a) {
+    return tasks.push(a);
+  }
 
-const addTask = function(task) {
-  return tasks.push(task);
-};
+  function displayTasks() {
+    console.log(tasks);
+  }
+  return {
+    addTasks,
+    displayTasks
+  };
+})();
 
-const displayTasks = function(tasks) {
-  console.log(tasks);
-};
-
-addTask("test");
-addTask("test 1");
-addTask("test 2");
-displayTasks(tasks);
+taskManager.addTasks("test 1");
+taskManager.addTasks("test 2");
+taskManager.addTasks("test 3");
+taskManager.displayTasks();
