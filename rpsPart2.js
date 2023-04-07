@@ -1,8 +1,6 @@
 const hands = ["rock", "paper", "scissors"];
 
-let getHand = function() {
-  return hands[parseInt(Math.random() * 10) % 3];
-};
+let getHand = () => hands[parseInt(Math.random() * 10) % 3];
 
 let players = [
   {
@@ -27,7 +25,7 @@ let players = [
   }
 ];
 
-let playRound = function(p1, p2) {
+let playRound = (p1, p2) => {
   if (p1.hand === p2.hand) {
     console.log(p1.hand + " vs " + p2.hand + ". It's a tie");
   } else {
@@ -47,7 +45,7 @@ let playRound = function(p1, p2) {
   playUntil(p1, p2);
 };
 
-let playUntil = function(p1, p2) {
+let playUntil = (p1, p2) => {
   p1.hand = getHand();
   p2.hand = getHand();
   if (p1.wins === 5 || p2.wins === 5) {
@@ -60,13 +58,13 @@ let playUntil = function(p1, p2) {
   } else playRound(p1, p2);
 };
 
-let playGame = function(p1, p2) {
+let playGame = (p1, p2) => {
   console.log("-" + p1.name + " vs. " + p2.name + "-\n");
   playUntil(p1, p2);
   console.log("\n<" + winner.name + " wins the round>\n");
 };
 
-let playTournament = function(p) {
+let playTournament = p => {
   console.log("\n\n*ROUND 1*\n");
   playGame(p[0], p[1]);
   let game1 = winner;
