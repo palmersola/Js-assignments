@@ -49,9 +49,7 @@ let playUntil = (p1, p2) => {
   p1.hand = getHand();
   p2.hand = getHand();
   if (p1.wins === 5 || p2.wins === 5) {
-    if (p1.wins === 5) {
-      winner = p1;
-    } else winner = p2;
+    winner = p1.wins === 5 ? p1 : p2;
     p1.wins = 0;
     p2.wins = 0;
     return winner;
