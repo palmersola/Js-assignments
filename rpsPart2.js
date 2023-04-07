@@ -29,17 +29,13 @@ let playRound = (p1, p2) => {
   if (p1.hand === p2.hand) {
     console.log(p1.hand + " vs " + p2.hand + ". It's a tie");
   } else {
-    if (
-      (p1.hand === "rock" && p2.hand === "paper") ||
-      (p1.hand === "paper" && p2.hand === "scissors") ||
-      (p1.hand === "scissors" && p2.hand === "rock")
-    ) {
-      p2.wins++;
-      winner = p2;
-    } else {
-      p1.wins++;
-      winner = p1;
-    }
+    winner =
+      (p1.hand === "scissors" && p2.hand === "paper") ||
+      (p1.hand === "rock" && p2.hand === "scissors") ||
+      (p1.hand === "paper" && p2.hand === "rock")
+        ? p1
+        : p2;
+    winner.wins++;
     console.log(p1.hand + " vs " + p2.hand + ". " + winner.name + " wins.");
   }
   playUntil(p1, p2);
