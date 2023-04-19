@@ -34,7 +34,7 @@ display = () => {
   localStorage.setItem("todo list", JSON.stringify(list.getTodos()));
   listDiv.innerHTML = "";
   list.getTodos().map(todo => {
-    let del = document.createElement("button");
+    let del = document.createElement("li");
     del.innerText = todo.todo;
     del.classList.add("delete");
     del.setAttribute("id", todo.id);
