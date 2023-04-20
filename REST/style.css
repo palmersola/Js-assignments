@@ -1,0 +1,14 @@
+#data {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.post {
+  margin: 20px;
+  padding: 0px 20px;
+  width: 500px;
+  background-color: lightgray;
+}
