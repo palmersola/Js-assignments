@@ -18,6 +18,7 @@ let fetchUserById = userid =>
       userCheck.length === 0 ? rej(new Error("user not found")) : res(userCheck[0]);
     }, 1000);
   });
+
 fetchUserById(1).then(user => console.log("User found:", user)).catch(error => console.error("Error:", error));
 fetchUserById(2).then(user => console.log("User found:", user)).catch(error => console.error("Error:", error));
 //id of 0 to show error working
